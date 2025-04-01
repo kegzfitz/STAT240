@@ -1,0 +1,68 @@
+---
+title: "Proposal"
+output: html_document
+date: "2025-03-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+## Group Members
+
+## Communication
+
+  Communication will occur via outlook email and an imessage groupchat when not in person.
+In person times to meet up will include at least 1 hour on thursdays at 4pm and if needed
+an hour on Tuesdays from 3-4pm may also be used. 
+  
+
+## Question of Interest
+  
+  The question of interest we will be exploring is whether there is a positive lienar relationsip between trump vote share and hate crime rate ammong the sample of U.S. states.
+
+/Users/keeganfitzpatrick/Desktop/STAT240/Data
+
+## Data and Description
+
+Source: https://github.com/fivethirtyeight/data/blob/master/hate-crimes/README.md
+Columns of interest: Hate crime rate by state - SPLC or FBI
+                     Share trump vote: United states elections project U-Florida
+                     Median Income- Census
+                     Other columns- Kaiser foundation
+                     
+Note: github links to SPLC and FBI data do not work anymore. 
+
+SPLC hate crime data for 2016 can be found here: https://www.splcenter.org/hate-map/?hm_year=2023&hm_state=WI
+FBI hate crime data 2016 can be found here (tables 12 and 13): https://ucr.fbi.gov/hate-crime/2016/topic-pages/jurisdiction#:~:text=Jurisdictional%20data%20provide%20aggregate%20state,11.6%20percent)%20reported%206%2C121%20incidents.
+
+The merged datasets compiled by 538 was gathered for an article discussing the relationsip between income inequality (gini index) and hate crime rate by state. The dataset we will use is merged from multiple other datasets by various governmental and non-profit agences. For the variables we are most interested in the gathering process goes as following: Median income is simply calculated from U.S. census data. Share of trump vote is calculated from 2016 election results for each state and is simply the #trump_votes/#votes for each state. SPLC gets their hate crime data partially from voluntary reporting by agencies and also by personal testimonies and victim surveys. FBI gathers only from voluntary participation by police agencies and thus their estimates are lower. 
+
+The original 538 article can be found here:  https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/
+
+The data is a cross section of 2016 of 50 states + DC where each observation is a state or DC. number of rows is 51 + header and number of columns is 12. 
+```{r}
+hatecrimes <- read_csv("/Users/keeganfitzpatrick/Desktop/STAT240/Data/hate_crimes.csv")
+hatecrimes
+```
+
+## Graph Outline
+
+We will provide a scatter plot of hate_crime_rate vs trump_vote_share and put a line of best fit through the data. Will include labs and a legend if necessary. Below is a very rough draft of a graph we will show.
+
+```{r}
+hatecrimes %>% ggplot(aes(hate_crimes_per_100k_splc, share_voters_voted_trump)) + geom_point() +
+  geom_smooth(method = "lm", se = F)
+```
+
+## Inference Method
+
+We will be using simple linear regression of hate_crime_rate on trump_vote_share.
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
