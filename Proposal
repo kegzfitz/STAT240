@@ -27,8 +27,6 @@ an hour on Tuesdays from 3-4pm may also be used.
   
   The question of interest we will be exploring is whether there is a positive lienar relationsip between trump vote share and hate crime rate ammong the sample of U.S. states.
 
-/Users/keeganfitzpatrick/Desktop/STAT240/Data
-
 ## Data and Description
 
 Source: https://github.com/fivethirtyeight/data/blob/master/hate-crimes/README.md
@@ -48,6 +46,7 @@ The original 538 article can be found here:  https://fivethirtyeight.com/feature
 
 The data is a cross section of 2016 of 50 states + DC where each observation is a state or DC. number of rows is 51 + header and number of columns is 12. 
 ```{r}
+#edit the function below with personalized file path
 hatecrimes <- read_csv("/Users/keeganfitzpatrick/Desktop/STAT240/Data/hate_crimes.csv")
 hatecrimes
 ```
