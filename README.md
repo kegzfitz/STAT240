@@ -23,7 +23,9 @@ to get a local repository, and edit the file on the machine.
 After edit everything, do:
 
 > git add .
+
 > git commit -m "Comments that you want to left for this submission"
+
 > git push
 
 and the update will be shown on the remote repository on Github webpage.
