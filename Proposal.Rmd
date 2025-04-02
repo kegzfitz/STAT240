@@ -5,20 +5,20 @@ date: "2025-03-30"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
 ```
 
+
 ## Group Members
+
+Zixuan Peng, Shikha Asharan, Keegan Fitzpatrick, Em McNeil
 
 ## Communication
 
-  Communication will occur via outlook email and an imessage groupchat when not in person.
+Communication will occur via outlook email and an imessage groupchat when not in person.
 In person times to meet up will include at least 1 hour on thursdays at 4pm and if needed
 an hour on Tuesdays from 3-4pm may also be used. 
   
@@ -47,7 +47,7 @@ The original 538 article can be found here:  https://fivethirtyeight.com/feature
 The data is a cross section of 2016 of 50 states + DC where each observation is a state or DC. number of rows is 51 + header and number of columns is 12. 
 ```{r}
 #edit the function below with personalized file path
-hatecrimes <- read_csv("/Users/keeganfitzpatrick/Desktop/STAT240/Data/hate_crimes.csv")
+hatecrimes <- read_csv("hate_crimes.csv")
 hatecrimes
 ```
 
